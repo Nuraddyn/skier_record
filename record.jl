@@ -133,32 +133,6 @@ function save_angles(model::Model, path::String)
     save_angle_to_file(model, path*"elbow.txt", 9, 8, 7) # Локоть.
     save_angle_to_file(model, path*"wrist.txt", 8, 9, 10) # Запястье.
 
-    # Колено:
-    #=touch("knee.txt")
-	file = open("knee.txt",  "w")
-	for i in model.r
-		r = i.points
-		write(file, string(get_angle(r[6], r[5], r[4])), "\n") 
-    end
-	close(file)=#
-
-    # Таз:
-    #=touch("pelnis.txt")
-	file = open("pelnis.txt",  "w")
-	for i in model.r
-		r = i.points
-		write(file, string(get_angle(r[5], r[6], r[7])), "\n") 
-    end
-	close(file)=#
-
-    # Пресс:
-    #=touch("press.txt")
-	file = open("press.txt",  "w")
-	for i in model.r
-		r = i.points
-        write(file, string(norm(Point(r[6].x-r[7].x, r[6].y-r[7].y))), "\n") 
-    end
-	close(file)=#
 end
 
 #=============================================================================#
